@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+     <link rel="stylesheet" th:href="@{css/style.css}">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<style>
+.menu{
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 68.5vh;
+animation: slide 10s infinite;
+background-color: rgba(0, 0,0,0.3);
+}
+.content{
+width: 100%;
+height: 100%;
+}
+@keyframes slide{
+0%{
+background-image: url(images/depositphotos-restaurant.jpeg);
+}
+20%{
+background-image: url(images/depositphotos-restaurant.jpeg);
+}
+20.01%{
+background-image: url(images/couverts-reglage.webp);
+}
+40%{
+background-image: url(images/couverts-reglage.webp);
+}
+40.01%{
+background-image: url(images/DSC_0147.jpeg);
+}
+60%{
+background-image: url(images/DSC_0147.jpeg);
+}
+60.01%{
+background-image: url(images/resto.webp);
+}
+80%{
+background-image: url(images/resto.webp);
+}
+80.01%{
+background-image: url(images/la-réserve-paris-bibliothèque-grégoire-gardette-4-768x512.jpg.webp);
+}
+100%{
+background-image: url(images/la-réserve-paris-bibliothèque-grégoire-gardette-4-768x512.jpg.webp);
+}
+
+}
+.head-gauche{
+color: white;
+margin-left: 10px;
+}
+.head-droite{
+color: white;
+margin-right: 10px;
+}
+.heads{
+display: flex;
+justify-content: space-between;
+}
+.navbar-brand{
+color: white;
+}
+.navbar{
+background: transparent;
+color: white;
+border: 2px solid white;
+border-left: none;
+border-right: none;
+justify-content: space-between;
+}
+* {
+box-sizing:border-box;
+}
+.nav-link{
+color: white;
+}
+#acc{
+color: white;
+margin-left: 370px;
+}
+.disp{
+display: flex;
+margin-top: 140px;
+
+}
+.phones{
+background-color: #C03027;
+transform: rotate(-90deg);
+color: white;
+}
+.sen{
+color: white;
+}
+.text{
+color: white;
+}
+.dep{
+margin-left: 250px;
+justify-content: center;
+text-align: center;
+
+}
+.flexable{
+justify-content: space-between;
+padding: 2%;
+margin: 5%;
+display: flex;
+}
+.bouton-haut{
+background-color: #C03027;
+text-decoration: none;
+color: white;
+border: 2px solid white;
+width: 300px;
+height: 60px;
+border-radius-top-left: 30%;
+padding: 2%;
+margin: 5%;
+}
+.bouton-bas{
+background: none;
+text-decoration: none;
+color: white;
+width: 300px;
+height: 60px;
+padding: 2%;
+margin: 5%;
+cursor: pointer;
+broder: 2px solid white;
+}
+.bouton-bas:hover{
+background-color: #FFE747;
+color: white;
+text-decoration: none;
+border: 2px solid white;
+}
+.divi{
+display: flex;
+justify-content: space-between;
+text-align: center;
+margin-top: 50px;
+}
+.color{
+color: white;
+background-color: #C03027;
+width: 160px;
+margin-left: 250px;
+margin-top: 50px;
+border: 2px solid #C03027;
+border-radius: 20px;
+}
+.lore{
+margin-left: 10px;
+}
+.min{
+display: flex;
+margin-right: 100px;
+}
+.image{
+width: 200px;
+height: 200px;
+padding: 3%;
+}
+.droit{
+display: flex;
+}
+.imas{
+margin-left: 200px;
+}
+.ima{
+margin-right: 10px;
+}
+.bnt{
+background: none;
+text-decoration: none;
+color: #FFE747;
+width: 300px;
+height: 60px;
+border: 2px solid #FFE747;
+}
+.bnt:hover{
+background-color: #FFE747;
+color: white;
+text-decoration: none;
+border: 2px solid white;
+}
+.just{
+justify-content: center;
+text-align: center;
+}
+.burgers{
+margin-top: 100px;
+}
+.justes{
+color: white;
+background-color: #C03027;
+width: 260px;
+border: 2px solid #C03027;
+border-radius: 20px;
+margin-left: 600px;
+}
+.load{
+animation: slide 2s;
+}
+.btn{
+color: white;
+}
+.innert{
+display: flex;
+}
+.prix{
+background-color: #FFE747;
+width: 100px;
+height: 40px;
+margin-left: 60px;
+justify-content: center;
+text-align: center;
+}
+.div-interne-droite{
+margin-left: 30px;
+background: #EBEBEB;
+width: 40%;
+margin: 3%;
+padding: 2%;
+}
+div-haut{
+display: flex;
+justify-content: space-between;
+}
+.div-interne-gauche{
+margin-left: 30px;
+background: #EBEBEB;
+width: 40%;
+margin: 3%;
+padding: 2%;
+}
+.vet{
+color: #C03027;
+}
+.lin-det-aj{
+display: flex;
+justify-content: center;
+text-align: center;
+}
+.det{
+text-decoration: none;
+margin: 3%;
+padding: 2%;
+color: white;
+background-color: #FFE747;
+}
+.aj{
+text-decoration: none;
+margin: 3%;
+padding: 2%;
+color: white;
+background-color: #C03027;
+}
+.aj:hover{
+background-color: #FFE747;
+color: white;
+text-decoration: none;
+}
+.det:hover{
+background-color: #C03027;
+color: white;
+text-decoration: none;
+}
+.div-bas{
+display: flex;
+justify-content: space-between;
+}
+.depla{
+margin-left: 820px;
+margin-top: -300px;
+}
+.mens{
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 230.5vh;
+background-image: url(images/98570daae63ffe599380b0e4b0df7e1513dbb0b8_restaurant-carousel-1.jpeg)
+}
+
+.but{
+text-decoration: none;
+margin: 3%;
+padding: 2%;
+color: white;
+background-color: #FFE747;
+}
+.butn{
+text-decoration: none;
+margin: 3%;
+padding: 2%;
+color: white;
+background-color: #C03027;
+}
+.butn:hover{
+background-color: #FFE747;
+color: white;
+text-decoration: none;
+}
+.but:hover{
+background-color: #C03027;
+color: white;
+text-decoration: none;
+}
+.lien-lier{
+display: flex;
+justify-content: space-between;
+}
+.player{
+display: flex;
+}
+.editer{
+color: white;
+background-color: #C03027;
+width: 160px;
+margin-left: 460px;
+margin-top: 50px;
+border: 2px solid #C03027;
+border-radius: 20px;
+}
+.edit{
+padding: 1%;
+}
+.mareg{
+margin-left: 460px;
+color: white;
+}
+select{
+background-color: #C03027;
+margin-left: 260px;
+margin-top: 20px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: white;
+  overflow: hidden;
+
+  margin-left: 460px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.naviguer{
+border-bottom: 2px solid #C03027;
+}
+</style>
+<div class="menu">
+    <div class="load"></div>
+    <div class="content">
+<div class="heads">
+    <div class="head-gauche">
+        <i class="fa-solid-white fa-phone"></i>
+        <p class="head">Phone: +221 781343142</p>
+    </div>
+    <div class="head-droite">
+        <i></i>
+        <p>Opening Hours: Lun-Sam  08h-22h</p>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{images/img.png}" class="logo"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="acc">
+                        Accueil</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Catalogue</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produits
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" >Ajouter</a></li>
+                        <li><a class="dropdown-item" href="#">Listes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" >Ajouter</a></li>
+                        <li><a class="dropdown-item">Listes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Utilisateurs
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                        <li><a class="dropdown-item" href="#">Listes</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                <button class="btn btn-outline-white me-2" type="submit">Se connecter</button>
+                <button class="btn btn-white" type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+</nav>
+    <div class="disp">
+        <div><p class="phones">Phone: +221 781343142</p></div>
+        <div class="dep">
+            <div class="titre"><h1 class="sen">SENEGALESE DELICIOUS FOOD</h1></div>
+            <div><p class="text">Lorem ipsum do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+            <div class="flexable">
+                <button class="bouton-haut">Order now</button>
+                <button class="bouton-bas">Our Menu</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Notre restaurant -->
+<div class="divi">
+    <div class="sey">
+        <p class="color">WE ARE</p>
+        <h1 class="tit">The Food Resturant</h1>
+        <p class="lore">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo.<br/>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elie.</p>
+        <button class="bnt">VOIR PLUS</button>
+    </div>
+    <div class="droit">
+        <div class="min">
+            <div class="imas">
+                <img th:src="@{images/part1.jpeg}" class="image"/>
+                <img th:src="@{images/part2.jpeg}" class="image"/>
+            </div>
+            <!-- animation -->
+            <div class="ima">
+                <img th:src="@{images/burger-maison.jpeg}" class="image"/>
+
+                <img th:src="@{images/comment-preparer-le-big-kahuna-burger-de-pulp-fiction.jpeg}" class="image"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Nos burgers  -->
+<div class="burgers">
+    <div class="just"><p class="justes">BUY 1 GET 1 FREE</p></div>
+    <div class="just"><h1 class="justin">NOS BURGERS</h1></div>
+    <!-- div haut -->
+    <div class="div-haut">
+        <!-- div interne droite -->
+        <div class="div-interne-droite">
+            <h4 class="vet">Burger Simple</h4>
+            <!-- div interne droite premiere div -->
+            <div class="innert">
+                <p>1 Large Burger + 1 Free + 2 Regular Drinks + Fries + Salad<br/>
+                    Morning Deals</p>
+                <p class="prix">1500F CFA</p>
+            </div>
+            <!-- div interne droite deuxieme div -->
+            <div class="lin-det-aj">
+                <a class="det" href="#">Détails</a>
+                <a class="aj" href="#">Ajouter</a>
+            </div>
+        </div>
+        <!-- div interne gauche -->
+        <div class="div-interne-gauche depla">
+            <h4 class="vet">Burger Double</h4>
+            <div class="innert">
+                <p>1 Large Burger + 1 Free + 2 Regular Drinks + Fries + Salad<br/>
+                    Morning Deals</p><br/>
+                <p class="prix">1500F CFA</p>
+            </div>
+            <div class="lin-det-aj">
+                <a class="det" href="#">Détails</a>
+                <a class="aj" href="#">Ajouter</a>
+            </div>
+        </div>
+    </div>
+    <!-- div bas -->
+    <div class="div-bas">
+        <div class="div-interne-gauche">
+            <h4 class="vet">Burger Simple</h4>
+            <!-- div interne droite premiere div -->
+            <div class="innert">
+                <p>1 Large Burger + 1 Free + 2 Regular Drinks + Fries + Salad<br/>
+                    Morning Deals</p>
+                <p class="prix">1500F CFA</p>
+            </div>
+            <div class="lin-det-aj">
+                <a class="det" href="#">Détails</a>
+                <a class="aj" href="#">Ajouter</a>
+            </div>
+        </div>
+        <div class="div-interne-gauche">
+            <h4 class="vet">Burger Simple</h4>
+            <!-- div interne droite premiere div -->
+            <div class="innert">
+                <p>1 Large Burger + 1 Free + 2 Regular Drinks + Fries + Salad<br/>
+                    Morning Deals</p>
+                <p class="prix">1500F CFA</p>
+            </div>
+            <div class="lin-det-aj">
+                <a class="det" href="#">Détails</a>
+                <a class="aj" href="#">Ajouter</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nos Menus -->
+<div class="mens">
+    <div class="edit">
+        <p class="editer text-center">HOT SALES</p>
+    </div>
+    <div class="player">
+        <div class="text-center mareg">
+            <h1>NOS Menus</h1>
+        </div>
+        <div class="text-center">
+            <select>
+                <option>Selectionner</option>
+                <option>Par prix</option>
+                <option>Par etat</option>
+                <option>Par etat et par etat</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card">
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                   <div class="lien-lier">
+                       <a href="" class="but">
+                           Voir plus
+                       </a>
+                       <a href="" class="butn">
+                           Ajouter
+                       </a>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            <div class="card" >
+                <img th:src="@{images/2219_243.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        DELL Latitude
+                    </h5>
+                    <p class="card-text">250000 FCFA</p>
+                    <div class="lien-lier">
+                        <a href="" class="but">
+                            Voir plus
+                        </a>
+                        <a href="" class="butn">
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Notre carte -->
+<div class="container notre-carte">
+    <!-- Texte et titre -->
+    <div class="notre-texte">
+        <p class="tasty">TASTY & SPICY RECIPES</p>
+        <h3 class="decouvrer">Découvrez notre carte</h3>
+    </div>
+    <!-- Lien pour carte -->
+    <div class="naviguer">
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div></div>
+</div>
+<!-- Réserver dés maintenant -->
+<!-- Notre galerie -->
+<!-- Témoignage -->
+<!-- Nos membres -->
+<!-- Formulaire simple -->
+<!-- Footer -->
+<script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
